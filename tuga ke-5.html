@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Lucu</title>
+    <link rel="stylesheet" href="tugas5.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator</h2>
+        <input type="text" id="input" name="input" readonly>
+        <div class="button-container">
+            <button onclick="onKlik(1)" value="1">1</button>
+            <button onclick="onKlik(2)" value="2">2</button>
+            <button onclick="onKlik(3)" value="3">3</button>
+            <button onclick="onKlik(4)" value="4">4</button>
+            <button onclick="onKlik(5)" value="5">5</button>
+            <button onclick="onKlik(6)" value="6">6</button>
+            <button onclick="onKlik(7)" value="7">7</button>
+            <button onclick="onKlik(8)" value="8">8</button>
+            <button onclick="onKlik(9)" value="9">9</button>
+            <button onclick="onKlik(0)" value="0">0</button>
+            <button onclick="onKlik('+')" value="+">+</button>
+            <button onclick="onKlik('-')" value="-">-</button>
+            <button onclick="onKlik('*')" value="*">*</button>
+            <button onclick="onKlik('/')" value="/">/</button>
+            <button onclick="clearInput()" value="C">C</button>
+            <button onclick="kalkulator(input.value)" value="=">=</button>
+        </div>
+        <p id="output"></p>
+    </div>
+    <script>
+        var output = document.getElementById("output");
+        var input = document.getElementById("input");
+
+        function onKlik(values) {
+            input.value += values;
+        }
+
+        function kalkulator(value) {
+            try {
+                output.innerHTML = eval(value);
+            } catch {
+                output.innerHTML = "Error!";
+            }
+        }
+
+        function clearInput() {
+            input.value = ""; // Menghapus input
+            output.innerHTML = ""; // Menghapus output
+        }
+    </script>
+</body>
+</html>

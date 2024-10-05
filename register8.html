@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="./csstu8.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p>Sudah punya akun? <a href="./login8.html">Login di sini</a></p>
+    </div>
+
+    <script >
+        // Ambil elemen form
+const registerForm = document.getElementById('registerForm');
+
+// Tambahkan event listener untuk form submit
+registerForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Mencegah form dari submit default
+
+    // Ambil username dan password dari input
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Simpan data ke local storage
+    localStorage.setItem('username', username);
+    localStorage.setItem('password', password);
+
+    // Redirect ke halaman login
+    alert('Registrasi berhasil! Silakan login.');
+    window.location.href = 'login.html';
+});
+    </script>
+</body>
+</html>

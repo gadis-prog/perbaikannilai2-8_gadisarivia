@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./csstu8.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required><br>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Belum punya akun? <a href="./register8.html">Daftar di sini</a></p>
+    </div>
+
+    <script>
+        // Ambil elemen form
+const loginForm = document.getElementById('loginForm');
+
+// Tambahkan event listener untuk form submit
+loginForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Mencegah submit default
+
+    // Ambil username dan password dari input
+    const usernameInput = document.getElementById('username').value;
+    const passwordInput = document.getElementById('password').value;
+
+    // Ambil username dan password dari local storage
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
+
+    // Cek apakah username dan password sesuai
+    if (usernameInput === storedUsername && passwordInput === storedPassword) {
+        alert('Login berhasil!');
+        window.location.href = 'dashboard.html'; // Redirect ke halaman dashboard
+    } else {
+        alert('Username atau password salah!');
+    }
+});
+
+    </script>
+</body>
+</html>

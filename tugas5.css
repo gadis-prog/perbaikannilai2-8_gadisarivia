@@ -1,0 +1,98 @@
+/* Style untuk keseluruhan kalkulator */
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Menggunakan font yang lucu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 80px;
+    background-color: #f3f4f6; /* Warna latar belakang lembut */
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px; /* Lebih banyak radius untuk membuatnya tampak bulat */
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.2); /* Bayangan lebih lembut */
+    text-align: center;
+    width: 400px; /* Ukuran lebih kompak */
+    border: 5px solid #ffccf9; /* Garis tepi warna pink lembut */
+}
+
+input#input {
+    width: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    border: 3px solid #ff99c8;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #333;
+    background-color: #fdf1f9; /* Latar belakang input warna pink lembut */
+    box-shadow: inset 0px 5px 8px rgba(0, 0, 0, 0.1); /* Shadow dalam input */
+    outline: none;
+    font-weight: bold;
+}
+
+.button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Mengatur tombol dalam grid 4 kolom */
+    gap: 10px; /* Lebih banyak jarak antar tombol */
+}
+
+button {
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    font-size: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffccf9; /* Warna pink cerah */
+    border: none;
+    border-radius: 50%; /* Tombol bulat */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15); /* Shadow untuk tombol */
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background-color: #ffa3e0; /* Warna hover lebih cerah */
+    transform: scale(1.1); /* Efek pembesaran saat di hover */
+}
+
+button:active {
+    background-color: #ff7cc2; /* Warna lebih gelap saat ditekan */
+    box-shadow: none;
+    transform: scale(1); /* Kembali ke ukuran normal saat ditekan */
+}
+
+button[value="="] {
+    background-color: #a1c4fd; /* Warna biru untuk tombol = */
+}
+
+button[value="="]:hover {
+    background-color: #89c2ff; /* Hover warna biru cerah */
+}
+
+button[value="="]:active {
+    background-color: #6ea8fe; /* Saat ditekan */
+}
+
+button[value="C"] {
+    background-color: #ffcccc; /* Warna merah muda untuk tombol Clear */
+}
+
+button[value="C"]:hover {
+    background-color: #ff9999; /* Hover warna merah muda cerah */
+}
+
+p#output {
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333;
+    background-color: #ffe4e1;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1); /* Shadow untuk output */
+}
